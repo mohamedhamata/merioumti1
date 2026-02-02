@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I'm Truly Sorry, Meriem</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #1c1c2b, #0b0b14);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    .heart-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .heart-bg span {
+      position: absolute;
+      bottom: -50px;
+      color: rgba(255, 105, 135, 0.25);
+      animation: floatUp 12s linear infinite;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0) scale(0.8); opacity: 0; }
+      20% { opacity: 1; }
+      to { transform: translateY(-110vh) scale(1.2); opacity: 0; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: auto;
+      padding: 90px 20px;
+      text-align: center;
+      animation: fadeIn 1.6s ease;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.1rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 1.25rem;
+      opacity: 0.9;
+      margin-bottom: 45px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(14px);
+      border-radius: 26px;
+      padding: 50px 42px;
+      box-shadow: 0 35px 70px rgba(0, 0, 0, 0.55);
+      margin-bottom: 40px;
+    }
+
+    .card p {
+      line-height: 2;
+      font-size: 1.08rem;
+      margin-bottom: 22px;
+    }
+
+    .highlight {
+      color: #ff6b81;
+      font-weight: 500;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 28px;
+    }
+
+    button, .link-btn {
+      padding: 15px 40px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 40px;
+      background: linear-gradient(135deg, #ff6b81, #ff4757);
+      color: white;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+      box-shadow: 0 18px 36px rgba(255, 107, 129, 0.38);
+      text-decoration: none;
+    }
+
+    button:hover, .link-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 25px 50px rgba(255, 107, 129, 0.5);
+      opacity: 0.96;
+    }
+
+    .secondary {
+      background: linear-gradient(135deg, #2ed573, #1eae60);
+      box-shadow: 0 18px 36px rgba(46, 213, 115, 0.38);
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 35px;
+      animation: fadeIn 1.1s ease;
+    }
+
+    .promise {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 22px;
+      margin-top: 35px;
+    }
+
+    .promise div {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 18px;
+      padding: 28px 22px;
+      font-size: 0.96rem;
+    }
+
+    footer {
+      margin-top: 75px;
+      font-size: 0.9rem;
+      opacity: 0.75;
+    }
+
+    .audio-hint {
+      font-size: 0.85rem;
+      opacity: 0.7;
+      margin-top: 12px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(35px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="heart-bg" id="hearts"></div>
+
+  <div class="container">
+    <h1>Meriem</h1>
+    <h2>I owe you a sincere apology, from my heart.</h2>
+
+    <div class="card">
+      <p>
+        I am truly, deeply <span class="highlight">sorry</span>.
+      </p>
+      <p>
+        I know something inside you has been hurting lately, and knowing that I might be the reason
+        weighs heavily on my heart. Even if I don’t fully understand yet what I did wrong,
+        I take responsibility for the pain you’re feeling.
+      </p>
+      <p>
+        If I made you feel unheard, unappreciated, or alone —
+        please believe me when I say that was never what I wanted.
+        You matter to me more than I’ve ever managed to express properly.
+      </p>
+
+      <div class="actions">
+        <button onclick="showMore(); playMusic();">Please read the rest when you feel ready</button>
+        <a class="link-btn secondary" href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank">Send me a message</a>
+      </div>
+      <div class="audio-hint">(Soft music will start when you tap the button)</div>
+
+      <div id="more" class="hidden">
+        <p>
+          I love you in a quiet, serious way — the kind that wants to protect your heart,
+          not hurt it. And realizing that I may have caused you sadness breaks something in me.
+        </p>
+        <p>
+          I’m not asking you to forgive me quickly.
+          I’m asking you to let me understand you, to listen to you,
+          and to earn back the peace I may have taken away.
+        </p>
+
+        <div class="promise">
+          <div>🤍 I will listen without interrupting or defending myself</div>
+          <div>🤍 I will own my mistakes, even when it’s hard</div>
+          <div>🤍 I will show you love through actions, not promises</div>
+        </div>
+
+        <p style="margin-top:35px;">
+          I miss your calm, your smile, and the way things felt between us.
+          Whenever you’re ready to talk — even if it takes time —
+          I will be here, choosing you.
+        </p>
+
+        <div class="actions" style="margin-top:20px;">
+          <button onclick="showLetter()">One last letter, from my heart</button>
+        </div>
+
+        <div id="letter" class="hidden">
+          <p style="margin-top:35px;">
+            Meriem, loving you has never been loud for me — it has been deep.
+            You are the thought that stays when everything else goes quiet.
+            If my mistakes made you doubt how much you mean to me,
+            then I failed at showing the love I feel every day.
+          </p>
+          <p>
+            I love you in the small ways: in patience, in care, in choosing you even when it’s hard.
+            I don’t want perfection with you — I want honesty, growth, and a future
+            where we protect each other’s hearts.
+          </p>
+          <p>
+            If you let me, I will spend my time proving this love gently,
+            not rushing you, not pressuring you — just being here,
+            loving you the right way.
+          </p>
+          <p class="highlight">
+            You are important to me. You are loved. And you are worth every effort.
+          </p>
+
+          <p style="margin-top:30px; font-family:'Playfair Display', serif; font-size:1.2rem; opacity:0.9;">
+            Always yours,
+          </p>
+          <p style="font-family:'Playfair Display', serif; font-size:1.6rem; font-style:italic; margin-top:5px;">
+            Mohamed
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      With love, patience, and sincerity.
+    </footer>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="the-loner.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function showMore() {
+      const more = document.getElementById('more');
+      if (more) {
+        more.classList.remove('hidden');
+      }
+    }
+
+    function playMusic() {
+      const music = document.getElementById('bgMusic');
+      if (music && music.paused) {
+        music.volume = 0.6;
+        music.play().catch(() => {});
+      }
+    }
+
+    function showLetter() {
+      const letter = document.getElementById('letter');
+      if (letter) {
+        letter.classList.remove('hidden');
+      }
+    }
+
+    const hearts = document.getElementById('hearts');
+    if (hearts) {
+      for (let i = 0; i < 20; i++) {
+        const span = document.createElement('span');
+        span.innerText = '❤';
+        span.style.left = Math.random() * 100 + '%';
+        span.style.animationDuration = 8 + Math.random() * 6 + 's';
+        span.style.fontSize = 14 + Math.random() * 22 + 'px';
+        hearts.appendChild(span);
+      }
+    }
+  </script>
+
+</body>
+</html>
